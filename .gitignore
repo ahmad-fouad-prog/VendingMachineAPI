@@ -4,11 +4,30 @@
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
+# Directory for built files
+target/
+build/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# IDEA IntelliJ files
+.idea/
+*.iml
+
+# Eclipse files
+*.metadata
+*.prefs
+.bin
+*.bak_*
+.settings/
+.classpath
+.project
+
+# Maven 
+log/
+*.bak
+
+# NetBeans files
+nb-configuration.xml
+nbactions.xml
 
 # Package Files #
 *.jar
@@ -22,3 +41,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# MacOS files
+.DS_Store
