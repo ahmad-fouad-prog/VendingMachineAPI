@@ -79,12 +79,12 @@ public class UserService implements UserDetailsService {
     }
 
     public UserDTO findById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new CustomException(ErrorCode.RESOURCE_NOT_FOUND));
+        User user = userRepository.findById(id).orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
         return userMapper.toDTO(user);
     }
 
     public User findByIdEntity(Long id) {
-        return userRepository.findById(id).orElseThrow(() -> new CustomException(ErrorCode.RESOURCE_NOT_FOUND));
+        return userRepository.findById(id).orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
     }
 
 
@@ -100,7 +100,7 @@ public class UserService implements UserDetailsService {
         Optional<User> userOPT = userRepository.findById(id);
 
         if (userOPT.isEmpty()) {
-            throw new CustomException(ErrorCode.RESOURCE_NOT_FOUND);
+            throw new CustomException(ErrorCode.USER_NOT_FOUND);
         }
 
         User user = userOPT.get();
@@ -120,7 +120,7 @@ public class UserService implements UserDetailsService {
         }
     }
     public User findByUsername(String username) {
-        return userRepository.findByUsername(username).orElseThrow(() -> new CustomException(ErrorCode.RESOURCE_NOT_FOUND));
+        return userRepository.findByUsername(username).orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
     }
 
     @Override
